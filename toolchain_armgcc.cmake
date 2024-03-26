@@ -19,9 +19,7 @@ add_compile_options(-mcpu=${MCPU} -mthumb -mthumb-interwork)
 
 add_definitions(-DCPU_MCXA153VLH 
                 -DMCUXPRESSO_SDK 
-                -g 
-                -O0
-                -Wall 
+                -g
                 -mthumb 
                 -MMD 
                 -MP 
@@ -29,7 +27,6 @@ add_definitions(-DCPU_MCXA153VLH
                 -ffunction-sections 
                 -fdata-sections 
                 -ffreestanding 
-                -nostdlib
                 -fno-builtin 
                 -mapcs 
                 -fno-exceptions)
@@ -44,7 +41,8 @@ add_link_options(-T ${LINKER_SCRIPT}
                 -Wl,--no-warn-rwx-segments
                 -lm
                 -Wl,-Map=${PROJECT_BINARY_DIR}/${PROJECT_NAME}.map
-                -Wall)
+                )
+
 add_link_options(-T ${LINKER_SCRIPT} -static)
 
 include_directories(${CMAKE_CURRENT_LIST_DIR} ${CMAKE_CURRENT_LIST_DIR}/CMSIS/Core/Include/)
