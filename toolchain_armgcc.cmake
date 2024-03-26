@@ -46,6 +46,6 @@ add_link_options(-T ${LINKER_SCRIPT}
                 -Wall )
 add_link_options(-T ${LINKER_SCRIPT} -static)
 
-include_directories("." "CMSIS/Core/Include/")
+include_directories(${CMAKE_CURRENT_LIST_DIR} ${CMAKE_CURRENT_LIST_DIR}/CMSIS/Core/Include/)
 
 set(STARTUP_SCRIPT_SOURCES "${CMAKE_CURRENT_LIST_DIR}/system_MCXA153.c" "${CMAKE_CURRENT_LIST_DIR}/gcc/startup_MCXA153.S")
